@@ -1,0 +1,454 @@
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Epilogue', sans-serif;
+}
+
+:root{
+
+--AlmostWhite: hsl(0, 0%, 98%);
+--MediumGray: hsl(0, 0%, 41%);
+--AlmostBlack: hsl(0, 0%, 8%);
+--DropListBg: #fff;
+--transition:.5s;
+
+user-select: none;
+
+}
+
+body{
+    background-color: var(--AlmostWhite);
+}
+
+
+img{
+    max-width: 100%;
+}
+
+.container{
+    width: 95%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+
+.flexB{
+    display: flex;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+.navCover,
+.hamburgerbtn{
+    display: none;
+}
+
+.closeBtnContainer{
+    display: none;
+}
+
+
+
+#nav,
+.primary-navlist{
+    /* border: 1px solid red; */
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.primary-navlist{
+    width: 90%;
+}
+
+.primary-navlist a{
+    color: var(--MediumGray)
+}
+
+.primary-navlist a:hover{
+    color: var(--AlmostBlack);
+}
+
+.dropDownBtn{
+    position: relative;
+}
+
+.arrow{
+    position: absolute;
+    inset: .3rem -1rem auto auto;
+    transform: rotate(0);
+    transition: var(--transition);
+}
+
+.arrow.rotate{
+    transform: rotate(180deg);
+}
+
+
+.droplistAndOthers,
+.loginAndRegister{
+    align-items: center;
+}
+
+
+.droplistAndOthers > .col + .col,
+.loginAndRegister > .col + .col{
+    margin-left: 2.5em;
+}
+
+.registerBtn{
+    border: .1em solid var(--MediumGray);
+    padding: .5em 1em;
+    border-radius: .8em;
+}
+
+.dropDowns{
+    position: absolute;
+    padding: 1.1em 1.5em;
+    
+    background-color: var(--DropListBg);
+    border-radius: .5rem;
+    box-shadow: 0 .1rem .4rem #999999;
+    
+}
+
+
+
+.featuresList,
+.companyList{
+  top: 4rem;
+}
+
+.featuresList{
+    /* left: 17.5rem; */
+    margin-left: -5rem;
+}
+
+.dropDowns > li .icons + a{
+    margin-left: .5em;
+}
+
+.dropDowns > li + li{
+    margin-top: 1.2em;
+}
+
+.featuresList{
+    margin-top: -10.8rem;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.companyList{
+    margin-top: -7.7rem;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.featuresList,
+.companyList{
+    transition: var(--transition);
+}
+
+.featuresList.active,
+.companyList.active{
+    margin-top: 0;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.image{
+    pointer-events: none;
+    flex-basis: 33%;
+   
+}
+
+.mobileImg{
+    display: none;
+}
+
+.desktopImg{
+    min-width: 350px;
+}
+
+.content{
+    flex-direction: row-reverse;
+    width: 85%;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+.typography{
+    flex-direction: column;
+    align-self: flex-end;
+    flex-basis: 56%;
+    
+}
+
+.typography h1{
+    font-size: min(9.5vw, 5rem);
+    max-width:525px;
+    
+}
+
+.typography p{
+    color: var(--MediumGray);
+    font-size: min(6.5vw, 1rem);
+    width: 90%;
+    max-width: 400px;
+    /* margin: 0 auto; */
+    line-height: 1.5em;
+}
+
+.learnMoreBtn{
+    text-align: center;
+    background-color: var(--AlmostBlack);
+    border: 1px solid var(--AlmostWhite);
+    color: var(--AlmostWhite);
+    padding: min(30vh, .8em) 0;
+    width: 50%;
+    max-width: 8.5em;
+    border-radius: 1rem;
+    transition: .5s;
+}
+
+.learnMoreBtn:hover{
+    background-color: var(--AlmostWhite);
+    color: var(--AlmostBlack);
+    border: 1px solid var(--AlmostBlack);
+}
+
+.learnMoreBtn:active{
+    transform: translateY(-10px);
+}
+
+
+.row + .row{
+    margin-top: 3em;
+}
+
+.footer{
+    justify-content: space-between;
+    max-width: 400px;
+}
+
+.footer li{
+    width: 4rem;
+    transform: translateY(0);
+    transition: .5s;
+}
+
+.footer li:hover{
+    transform: translateY(-2vh);
+    cursor: pointer;
+}
+
+
+.footerLogo{ 
+   width: min(6vw, 2rem);
+}
+
+.footerLogo:hover{
+    
+}
+
+.facebook{
+    fill: #4267B2;
+}
+
+.twitter{
+    fill: #00ACEE;
+}
+
+.linkedIn{
+    fill:  #0072b1;
+}
+
+.instagram{
+   fill: none; 
+   stroke: #fb3958;
+}
+
+
+
+
+@media(max-width:1022px){
+    .primary-navlist{
+        justify-content: flex-end;
+       
+    }
+    .droplistAndOthers + .loginAndRegister{
+        margin-left: 2.5rem;
+    }
+}
+
+@media(max-width:773px){
+
+ 
+.navCover,
+.primary-navlist{
+    position: fixed;
+    z-index: 1;
+}
+
+.hamburgerbtn{
+    display: block;
+    position: absolute;
+    right: .6em;
+}
+
+
+
+.closeBtnContainer{
+    display: block;
+    position: absolute;
+    inset: 1em 1.5em 0 auto;
+}
+
+.closeBtn{
+    transform: rotate(0);
+    transition: calc(.5s + var(--transition));
+}
+.closeBtn.rotate{
+    transform: rotate(180deg);
+}
+
+
+#nav,
+.primary-navlist{
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+    
+    .primary-navlist,
+    .droplistAndOthers,
+    .loginAndRegister{
+        flex-direction: column;
+    }
+
+    .navCover{
+        display: block;
+        inset: 0 auto 0 0;
+        width: 30%;
+        opacity:0;
+        margin-left: -7rem;
+        background-color: #000;
+    }
+
+    .navCover.active{
+        opacity: 60%;
+        margin-left: 0;
+    }
+
+    .primary-navlist{
+        inset: 0 0 0 auto;
+        width: 70%;
+        padding: min(15vh, 5rem) 1em;
+        opacity: 0;
+        margin-right: -16rem;
+        background-color: #fff;
+        pointer-events: none;
+    }
+
+    .primary-navlist.active{
+        opacity: 1;
+        margin-right: 0;
+        pointer-events: auto;
+    }
+
+    
+  .droplistAndOthers,
+  .loginAndRegister{
+    align-items: flex-start;
+    }
+
+.droplistAndOthers + .loginAndRegister{
+    margin-left: 0;
+    margin-top: 1.5em;
+    align-items: center;
+    /* border: 1px solid red; */
+    width: 100%;
+}
+
+.droplistAndOthers > .col + .col,
+.loginAndRegister > .col + .col{
+    margin-left:0;
+    margin-top: 1.3em;
+}
+
+.registerBtn{
+    width: 95%;
+    max-width: 300px;
+    text-align: center;
+}
+
+.dropDowns{
+    position: initial;
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.featuresList{
+    margin-left: 0;
+}
+
+.desktopImg{
+    display: none;
+}
+
+.mobileImg{
+    display: block;
+}
+
+.content{
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+}
+
+.typography{
+    text-align: center;
+    align-items: center;
+}
+
+.typography h1{
+    max-width:none;
+}
+
+
+.typography p{
+    margin: 0 auto;
+    width: 100%;
+    max-width: none;
+}
+
+.footer{
+    width: 100%;
+    justify-content: space-between;
+    padding: min(20vh, 30px) 0;
+}
+
+.row + .row{
+    margin-top: 1em;
+}
+
+
+
+
+}
+
